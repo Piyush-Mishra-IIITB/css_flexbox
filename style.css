@@ -1,0 +1,20 @@
+#cont{
+    height:400px;
+    width:400px;
+    margin:10px auto;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5%;
+    display:flex;
+    gap:20px;
+    padding: 5px;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+#cont div{
+    height:110px;
+    border-radius: 5%;
+    width:110px;
+    font-size: 50px;
+}
