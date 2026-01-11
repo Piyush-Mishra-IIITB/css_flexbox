@@ -1,15 +1,23 @@
-let i=document.querySelector('#input');
-let btn=document.querySelector('button');
-let ul=document.querySelector('ul');
-btn.addEventListener('click',function(){
-    let l=document.createElement('li');
-    l.innerText=i.value;
-    let bttn=document.createElement('button');
-    bttn.innerText="delete";
-    l.appendChild(bttn);
-    bttn.addEventListener('click',function(){
-        l.remove();
+function save(data){
+    return new Promise((resolve,reject)=>{
+        let time=Math.floor(Math.random()*10)+1;
+        if(time>5){
+            reject("error");
+        }else{
+            resolve("data saved");
+        }
     })
-    ul.appendChild(l);
-    i.value="";
+}
+let p=save("mydata")
+p.then(()=>{
+    console.log("first data saved");
+    return save("second");
+}).then(()=>{
+    console.log("second data saved");
+    return save("third");
+}).then(()=>{
+    console.log("third data saved");
 })
+.catch(()=>{
+    console.log("error");
+});
